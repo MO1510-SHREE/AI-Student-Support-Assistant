@@ -1,4 +1,4 @@
-Absolutely. For a **final-year project / GitHub / portfolio / project review**, I’d make it more formal and technically professional, while keeping it attractive. Here is a stronger version you can directly replace your current `README.md` with.
+
 
  # AI Student Support Assistant
 
