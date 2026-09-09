@@ -1,0 +1,679 @@
+:root {
+  --primary: #800020;
+  --primary-dark: #5c0017;
+
+  --sidebar: #1f050b;
+  --sidebar-card: #2b0b13;
+
+  --background: #fdfbfb;
+  --white: #ffffff;
+
+  --text: #1a0f12;
+  --muted: #7a686c;
+
+  --border: #ebdcdb;
+
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family:
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: var(--background);
+
+  color: var(--text);
+}
+
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.admin-layout {
+  min-height: 100vh;
+
+  display: flex;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.admin-sidebar {
+  width: 278px;
+
+  min-height: 100vh;
+
+  background: var(--sidebar);
+
+  color: white;
+
+  padding: 24px 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.admin-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 8px 30px;
+}
+
+
+.admin-logo {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 13px;
+
+  background: linear-gradient(
+    135deg,
+    #800020,
+    #a81c3e
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+}
+
+
+.admin-brand-title {
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+
+.admin-brand-subtitle {
+  color: #c9a3ad;
+
+  font-size: 11px;
+
+  margin-top: 2px;
+}
+
+
+/* Navigation */
+
+.admin-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.admin-nav-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  color: #fce8ec;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+
+.admin-nav-item:hover {
+  background: #2b0b13;
+
+  color: white;
+}
+
+
+.admin-nav-item.active {
+  background: #441622;
+
+  color: white;
+}
+
+
+.admin-sidebar-bottom {
+  margin-top: auto;
+
+  border-top: 1px solid #441622;
+
+  padding: 16px 8px 0;
+
+  font-size: 11px;
+
+  color: #c9a3ad;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  background: var(--success);
+
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.admin-main {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+/* Header */
+
+.admin-header {
+  min-height: 110px;
+
+  background: white;
+
+  border-bottom: 1px solid var(--border);
+
+  padding: 26px 36px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.admin-header h1 {
+  font-size: 24px;
+}
+
+
+.admin-header p {
+  color: var(--muted);
+
+  font-size: 13px;
+
+  margin-top: 5px;
+}
+
+
+.back-btn {
+  padding: 9px 14px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #1a0f12;
+
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+
+.back-btn:hover {
+  background: #fdfbfb;
+}
+
+
+/* Content */
+
+.admin-content {
+  max-width: 1120px;
+
+  margin: auto;
+
+  padding: 32px;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+
+.stat-card {
+  min-height: 86px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 11px;
+
+  background: #fdf2f4;
+
+  color: #800020;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 19px;
+}
+
+
+.stat-icon.brain {
+  background: #faf0f2;
+
+  color: #a81c3e;
+}
+
+
+.stat-icon.database {
+  background: #ecfdf5;
+
+  color: #16a34a;
+
+  font-size: 13px;
+}
+
+
+.stat-label {
+  font-size: 11px;
+
+  color: var(--muted);
+
+  margin-bottom: 4px;
+}
+
+
+.stat-value {
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.admin-card {
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  padding: 24px;
+
+  margin-bottom: 22px;
+}
+
+
+.admin-card h2 {
+  font-size: 16px;
+}
+
+
+.card-description {
+  color: var(--muted);
+
+  font-size: 12px;
+
+  margin-top: 5px;
+
+  margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   UPLOAD
+===================================================== */
+
+#fileInput {
+  display: none;
+}
+
+
+.upload-area {
+  min-height: 190px;
+
+  border: 1.5px dashed #ebdcdb;
+
+  border-radius: 13px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.upload-area:hover {
+  background: #fdf2f4;
+
+  border-color: var(--primary);
+}
+
+
+.upload-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 12px;
+
+  background: #fdf2f4;
+
+  color: var(--primary);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 23px;
+
+  margin-bottom: 12px;
+}
+
+
+.upload-title {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+
+.upload-text {
+  color: #7a686c;
+
+  font-size: 12px;
+}
+
+
+.upload-format {
+  color: #c9a3ad;
+
+  font-size: 10px;
+
+  margin-top: 7px;
+}
+
+
+.upload-button {
+  margin-top: 14px;
+
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+.upload-button:hover {
+  background: var(--primary-dark);
+}
+
+
+.upload-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   DOCUMENTS
+===================================================== */
+
+.documents-header {
+  margin-bottom: 14px;
+}
+
+
+.document-table {
+  border: 1px solid var(--border);
+
+  border-radius: 11px;
+
+  overflow: hidden;
+}
+
+
+.document-table-header {
+  min-height: 40px;
+
+  background: #fdfbfb;
+
+  border-bottom: 1px solid var(--border);
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #7a686c;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+#docList {
+  list-style: none;
+}
+
+
+#docList li {
+  min-height: 51px;
+
+  padding: 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #f8eaed;
+
+  font-size: 13px;
+}
+
+
+#docList li:last-child {
+  border-bottom: none;
+}
+
+
+.doc-name {
+  font-weight: 600;
+}
+
+
+.doc-size {
+  color: #c9a3ad;
+
+  font-size: 11px;
+
+  margin-left: 8px;
+}
+
+
+.muted {
+  color: #c9a3ad;
+}
+
+
+/* Delete */
+
+.delete-btn {
+  background: white;
+
+  border: 1px solid #fca5a5;
+
+  color: var(--danger);
+
+  padding: 6px 12px;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+.delete-btn:hover {
+  background: #fef2f2;
+}
+
+
+/* Status */
+
+.status {
+  margin-top: 12px;
+
+  font-size: 12px;
+}
+
+
+.status.success {
+  color: #16a34a;
+}
+
+
+.status.error {
+  color: #dc2626;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .admin-sidebar {
+    width: 220px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-content {
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .admin-sidebar {
+    display: none;
+  }
+
+  .admin-header {
+    padding: 20px;
+  }
+
+  .admin-header h1 {
+    font-size: 20px;
+  }
+
+  .admin-content {
+    padding: 15px;
+  }
+
+  .back-btn {
+    display: none;
+  }
+}
